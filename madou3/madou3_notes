@@ -1,0 +1,105 @@
+
+  
+2766 = region table (5 regions)
+  * 1b bank base
+  * 2b offset (top 2 bits are bank offset, remainder are pointer offset)
+1F50D+0x8 = 1bpp font
+e75e = dictionary pointer table (1F entries)
+
+madou2 2437 ~= madou3 24F4
+2795 ~= 2801
+
+tilemap dirty flags start at $C040 (madou2: $C280)
+  
+
+routines:
+  08C3 = waitVblank
+         (madou2 0D3D)
+  2701 = runRegion0Script
+         (madou2 2690)
+  29D9 = copyCharToFrontBuffer(?)
+         (madou2 2B64)
+  2D1B = fullyRefreshScreen
+         (madou2 2F09)
+  315A = sendPendingExpRamTiles
+         (madou2 321E)
+  3184 = copyTilesToExpRam
+         (madou2 324B)
+         
+  2CBD = text clear?
+
+ram
+  c005 = y-scroll base
+  c006 = y-scroll offset?
+  c007 = x-scroll base
+  c008 = x-scroll offset?
+  C01A = expRamToVdpQueueSize
+         (madou2 c018)
+  C01C-C01D = expRamTransferDst
+              (madou2 c01a)
+  C01E-C01F = expRamTransferSrc
+              (madou2 c01c)
+  c022 = numberBufferStart(?)
+         still 4 bytes?
+         (madou2 C051)
+  C031 = tilemap settings bitfield?
+         except now bit 7 is the front buffer refresh flag (originally a separate
+         byte, c011, in madou2)
+         (madou2 c0f0/c011)
+  c058 = current text window type
+         0 = right window
+         1 = left window
+         2 = bottom window
+         (madou2 c044)
+  C05A-C05B = base dstaddr of current text line
+              (madou2 c046-c047)
+  c05D = count of tile graphics to be transferred from exp RAM to VDP
+         after text printing finished?
+         (madou2 c0b3)
+  c05e-c05f = current expram target for text box tile data
+              (madou2 c0b4-c0b5)
+  c060-c061 = current vdp target for tile data
+              (madou2 c0b6-c0b7)
+  c062-c063 = textTilemapBackBufferPtr
+              e.g. d480
+              (madou2 c0c0)
+  c064 = cbc counter?
+         (madou2 c0c2)
+  c073 = ? bitfield
+         bit 6 = ? reset after script completed
+                 if set, text is not automatically transferred to VDP
+                 at end of script?
+         bit 7 = ? reset when script started?
+         (madou2 $C014)
+  c074 = ?
+  c078 = current text tile data expram addr
+         (madou2 c03f)
+  c07a = current text tile data vdp addr
+         (madou2 c041)
+  c07c = current text VRAM tile index
+         (madou2 c043)
+  c0e6 = target save file number
+         (madou2 C065)
+  c110 = arle level
+  c111 = arle current hp
+  c113 = arle max hp
+  c115 = arle current mp
+  c116 = arle max mp
+  c117 = arle evasion?
+         higher = more dodges
+  c118 = arle ?
+  c119 = arle ?
+  c11a = arle attack
+  c11b = arle defense?
+  c11e = arle exp
+  c201 = enemy hp?
+  c220 = copy of arle stats while in battle?
+  
+
+todo
+  * make sure cbc mode gets shut off when cutscenes are skipped
+  * update save file number address in script (old = C065,
+    new = c0e6)
+
+
+
