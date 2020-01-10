@@ -1,0 +1,63 @@
+********************************************************************************
+*            Madou Monogatari III: Kyuukyoku Joou-sama (Game Gear)             *
+*                     English Translation Patch Materials                      *
+********************************************************************************
+
+This package contains the source materials (code/art/script) for the English
+translation project for the Game Gear game Madou Monogatari III: Kyuukyoku
+Joou-sama.
+
+                    ****************************************
+                    *          Build Instructions          *
+                    ****************************************
+                    
+The build system is only set up for Unix-like systems, though none of the code
+is fundamentally dependent on this and could be ported with a bit of effort.
+You'll need GCC and libpng.
+
+Get a ROM image of the original game. There are two revisions of the game; as
+they are nearly identical, either one can be used. Make sure your ROM matches
+one of the following specifications:
+
+  Original release:
+    No-Intro filename: Madou Monogatari III - Kyuukyoku Joou-sama (Japan).gg
+    CRC32:             0A634D79
+    MD5:               B8B5305EC2F68D7BB3C9F622A13EBA7C
+    SHA-1:             DD590C9086161B1F97573C48720C32CC5506DABC
+
+  Revision 1:
+    No-Intro filename: Madou Monogatari III - Kyuukyoku Joou-sama (Japan) (Rev 
+1).gg
+    CRC32:             568F4825
+    MD5:               1294C965ABDD845F554B30B311DEE272
+    SHA-1:             673670F954176FFAB28A0280AA49856A457F36B1
+
+Rename it "madou3.gg" and place it in the "madou3" folder. Then:
+
+$ cd madou3
+$ ./build.sh
+
+build.sh should then build all the necessary tools and output the translated
+ROM as madou3_en.gg.
+
+If you want to modify the project, check build.sh to see where the resources
+that get inserted into the game are coming from.
+
+                    ****************************************
+                    *              Licensing               *
+                    ****************************************
+
+See COPYING. Basically, everything by me (Supper) is GPLv3, and everything else
+is under the terms of whoever wrote it.
+
+                    ****************************************
+                    *               Credits                *
+                    ****************************************
+
+                        TheMajinZenki -- Translation
+                               Supper -- Hacking
+                               cccmar -- Editing and Testing
+                               Filler -- Original Script Dump
+                             Xanathis -- Testing
+                        Kingofcrusher -- Special Thanks
+
