@@ -2753,7 +2753,7 @@ Fires raw magic as a beam.
 // たいりょくが[br]
 // ちょっぴり[br]
 // かいふく。
-Restores a tiny bit of health.
+Restore a tiny bit of health.
 [wait][end]
 
 
@@ -2769,7 +2769,7 @@ Restores a tiny bit of health.
 
 // たいりょくが[br]
 // かいふく。
-Restores health.
+Restore health.
 [wait][end]
 
 
@@ -2914,7 +2914,7 @@ Fully restores both magic and health.
 // だいだげきが[br]
 // でるように[br]
 // なるよ。
-Increases Critical rate.
+Increase Critical rate.
 [wait][end]
 
 
@@ -2931,7 +2931,7 @@ Increases Critical rate.
 
 // すばやさが[br]
 // ふえるよ。
-Increases speed.
+Increase speed.
 [wait][end]
 
 
@@ -2967,7 +2967,7 @@ Less likely to miss.
 // からだの[br]
 // どくを[br]
 // けすよ。
-Removes all poison.
+Remove all poison.
 [wait][end]
 
 
@@ -4826,7 +4826,7 @@ Its woolly body is impervious to cold.
 
 // script 1-0x61
 #STARTMSG(0x165E7, 12, 2)
-e
+
 [leftbox]
 // 『ほんげぇ』
 {Meehhh!}
