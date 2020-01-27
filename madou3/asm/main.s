@@ -2930,7 +2930,7 @@
 
       ; new translation credits, starting from script 4-C0
       ld c,$C0
-      .rept 7
+      .rept 8
         call $2A1C
       .endr
 /*      call $2A1C

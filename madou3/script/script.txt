@@ -16833,8 +16833,8 @@ Testing[br]
 
 [bottombox]
 [cbcmode]
-Special Thanks[br]
-   Filler
+Testing[br]
+   Oddoai-sama
 [end]
 
 //empty
@@ -16846,7 +16846,7 @@ Special Thanks[br]
 [bottombox]
 [cbcmode]
 Special Thanks[br]
-   Kingofcrusher
+   Filler
 [end]
 
 //empty
@@ -16857,7 +16857,8 @@ Special Thanks[br]
 
 [bottombox]
 [cbcmode]
-
+Special Thanks[br]
+   Kingofcrusher
 [end]
 
 //empty
