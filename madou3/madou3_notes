@@ -15,6 +15,8 @@ tilemap dirty flags start at $C040 (madou2: $C280)
 routines:
   08C3 = waitVblank
          (madou2 0D3D)
+  1F4D = yShakeOn?
+  1F6D = yShakeOff?
   2701 = runRegion0Script
          (madou2 2690)
   29D9 = copyCharToFrontBuffer(?)
@@ -97,9 +99,12 @@ ram
   
 
 todo
+
+done
   * make sure cbc mode gets shut off when cutscenes are skipped
   * update save file number address in script (old = C065,
     new = c0e6)
+  * fix screen-shake bug from original game
 
 
 

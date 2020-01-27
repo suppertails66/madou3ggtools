@@ -919,6 +919,36 @@
   .ends
 
   ;========================================
+  ; the routine that turns off the shake
+  ; effect used by both of the above
+  ; handlers is bugged, and resets the
+  ; "offset" values rather than the "base"
+  ; values that are actually modulated
+  ; to produce the shake effect.
+  ; this can cause the screen to get stuck
+  ; at the wrong position after the effect
+  ; stops.
+  ; fix this by resetting all values.
+  ;========================================
+
+  .bank 0 slot 0
+  .org $1F7F
+  .section "screen shake end fix 1" overwrite
+    call screenShakeEndFix
+  .ends
+
+  .bank 0 slot 0
+  .section "screen shake end fix 2" free
+    screenShakeEndFix:
+      ; clear both "base" scroll register values
+      ld ($C008),a
+      ld ($C006),a
+      
+      ; make up work
+      jp $2EAD
+  .ends
+
+  ;========================================
   ; generic vertical shake for e.g. trap treasure
   ; chest on floor 3
   ;========================================
